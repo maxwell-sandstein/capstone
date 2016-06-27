@@ -11,22 +11,26 @@ Facebook is a web application inspired by Mark Zuckerberg's original Facebook th
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README 
-- [ ] Notes
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Notebooks for organizing notes
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Tags for notes
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Rich Text Editing of notes
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+- [ ] Smooth, bug free navigation
+- [ ] Search bar for friends and events
+- [ ] Privacy Settings
+- [ ] News Feed
+- [ ] Notifications
+- [ ] Private Messages
+-  [ ] Profile Page
+  - [ ] Cover Photo
+  - [ ] Timeline
+  - [ ] Friends List
+  - [ ] About
+- [ ] Friend Requests
+- [ ] Events
+- [ ] Likes
+- [ ] Adequate CSS styling
+
+- [ ] Bonus Features
+  - [ ] People You May Know
+  - [ ] News Feed Algorithm 
+ 
 
 ## Design Docs
 * [View Wireframes][views]
@@ -41,9 +45,9 @@ Facebook is a web application inspired by Mark Zuckerberg's original Facebook th
 [api-endpoints]: docs/api-endpoints.md
 [schema]: docs/schema.md
 
-## Implementation Timeline
+## Implementation Timeline (Styling to be done with features as implemented)
 
-### Phase 1: Backend setup and Front End User Authentication (1 day, W1 Tu 6pm)
+### Phase 1: Auth (1 day)
 
 **Objective:** Functioning rails project with Authentication
 
@@ -53,93 +57,92 @@ Facebook is a web application inspired by Mark Zuckerberg's original Facebook th
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
 
-### Phase 2: Notes Model, API, and basic APIUtil (1.5 days, W1 Th 12pm)
+### Phase 2: Nav Bar (0.5 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
+**Objective:** Create Navbar
 
-- [ ] create `Note` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`NotesController`)
-- [ ] jBuilder views for notes
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [ ] create Navbar to be rendered when session is active
 
-### Phase 3: Flux Architecture and Router (1.5 days, W1 F 6pm)
+### Phase 3: Profile (1.5 days)
 
-**Objective:** Notes can be created, read, edited and destroyed with the
-user interface.
+**Objective:** Profile can be seen and created
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
-- implement each note component, building out the flux loop as needed.
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-- [ ] save Notes to the DB when the form loses focus or is left idle
-  after editing.
+- [ ] Profile Model
+- [ ] Seed
+- [ ] Profiles Controller
+- [ ] Jbuilder Views
+- [ ] Weback and Flux scaffold
+- [ ] APIUtil
+- [ ] Flux Loop
+- [ ] React Router
+- [ ] Components
+  - [ ] Cover Photo
+  - [ ] Profile Picture
+  - [ ] Name Link
+  - [ ] Request
+  - [ ] Intro Index
 
-### Phase 4: Start Styling (0.5 days, W2 M 12pm)
 
-**Objective:** Existing pages (including signup/signin) will look good.
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+### Phase 4: Update (0.5 days)
 
-### Phase 5: Notebooks (1 day, W2 Tu 12pm)
+**Objective:** Profile can be updated
 
-**Objective:** Notes belong to Notebooks, and can be viewed by notebook.
+- [ ] Everything from phase 3 on the update side
+- [ ] Components
+  - [ ] Update Form
+  - [ ] Update Index 
+  - [ ] Update Index Item
 
-- [ ] create `Notebook` model
-- build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
-- Use CSS to style new views
+### Phase 5: Comments (1 day)
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
+**Objective:** Comments CRUD
 
-### Phase 6: Tags (1 days, W2 Th 12pm)
+- [ ] Comment Model
+- [ ] Comment Controller
+- [ ] jBuilder views
+- [ ] APIutil
+- [ ] test API in console
+- [ ] flux loop
+- [ ] React Router
+- [ ] components
+  - [ ] Comments Index with items and a form
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
 
-- [ ] create `Tag` model and join table
-- build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
-- [ ] Style new elements
+### Phase 6: Search Bar (1 day)
 
-### Phase 7: Allow Complex Styling in Notes (0.5 days, W2 Th 6pm)
+**Objective:** Search bar shows links to users
 
-**objective:** Enable complex styling of notes.
+- [ ] Ajax to return users
+- [ ] render based on returned users
+- [ ] Inject into navbar
+- [ ] components
+  - [ ] search bar, results Index, results index item
+ 
 
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
 
-### Phase 8: Styling Cleanup and Seeding (1 day, W2 F 6pm)
+### Phase 7: Request (1 day)
 
-**objective:** Make the site feel more cohesive and awesome.
+**objective:** Requests CRUD
 
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
+- [ ] Requests Model
+- [ ] Seed
+- [ ] jBuilder views
+- [ ] flux loop
+- [ ] Components
+  - [ ] Request Button
+  - [ ] Request Index with request item nested
+
+### Phase 8: Notifications (0.5 days)
+
+**objective:** Notifications CRUD
+
+- [ ] The aforementioned CRUD stuff but for notifications
+
+
+### Phase 9: Cleanup (0.5 days)
+
+- [ ] CSS Refactoring
 
 ### Bonus Features (TBD)
-- [ ] Search through notes for blocks of text
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
 
-[phase-one]: docs/phases/phase1.md
-[phase-two]: docs/phases/phase2.md
-[phase-three]: docs/phases/phase3.md
-[phase-four]: docs/phases/phase4.md
-[phase-five]: docs/phases/phase5.md
